@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import "./Home.css";
 
@@ -252,17 +251,3 @@ function Home() {
 }
 
 export default Home;
-=======
-import React from 'react'
-import './Home.css';
-
-function Home() {
-  return (
-    <div className='home'>
-      Home
-    </div>
-  )
-}
-
-export default Home
->>>>>>> 44ded5cb4c05d0de47004864de4d29129a770d6e

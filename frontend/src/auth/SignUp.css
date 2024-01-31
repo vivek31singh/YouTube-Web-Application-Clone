@@ -1,5 +1,4 @@
 .signup {
-<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -253,21 +252,3 @@
     min-width: 50px;
   }
 }
-=======
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    border: 1px solid #000;
-  }
-  
-  .signup__sub {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 440px;
-    height: 50vh;
-    border: 1px solid #000;
-  }
->>>>>>> 44ded5cb4c05d0de47004864de4d29129a770d6e
