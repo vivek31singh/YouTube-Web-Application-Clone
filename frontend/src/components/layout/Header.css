@@ -1,12 +1,19 @@
 .header {
+<<<<<<< HEAD
   position: fixed;
   width: 98.5%;
+=======
+  border: 1px solid #000;
+>>>>>>> 44ded5cb4c05d0de47004864de4d29129a770d6e
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
+<<<<<<< HEAD
   background-color: #fff;
+=======
+>>>>>>> 44ded5cb4c05d0de47004864de4d29129a770d6e
 }
 
 .header__sub {
@@ -43,7 +50,10 @@
 
 .header__icon span {
   font-size: 22px;
+<<<<<<< HEAD
   font-weight: 500;
+=======
+>>>>>>> 44ded5cb4c05d0de47004864de4d29129a770d6e
   margin-right: 5px;
 }
 
@@ -91,6 +101,7 @@
   border-radius: 50%;
   padding: 9px;
   margin: 4px;
+<<<<<<< HEAD
   transition: 0.5s ease;
   cursor: pointer;
 }
@@ -100,15 +111,25 @@
   color: #fff;
 }
 
+=======
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+>>>>>>> 44ded5cb4c05d0de47004864de4d29129a770d6e
 .header__profile {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 35px;
   height: 35px;
+<<<<<<< HEAD
   background-color: #dfdfdf;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+=======
+  border: 1px solid #000;
+>>>>>>> 44ded5cb4c05d0de47004864de4d29129a770d6e
   border-radius: 50%;
   margin: 4px;
   margin-left: 16px;

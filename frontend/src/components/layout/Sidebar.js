@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
@@ -181,3 +182,17 @@ function Sidebar() {
 }
 
 export default Sidebar;
+=======
+import React from 'react'
+import './Sidebar.css';
+
+function Sidebar() {
+  return (
+    <div className='sidebar'>
+      Sidebar
+    </div>
+  )
+}
+
+export default Sidebar
+>>>>>>> 44ded5cb4c05d0de47004864de4d29129a770d6e

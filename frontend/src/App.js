@@ -22,6 +22,7 @@ function App() {
               </>
             }
           />
+<<<<<<< HEAD
           <Route
             path="/signin"
             element={
@@ -38,6 +39,11 @@ function App() {
               </>
             }
           />
+=======
+
+        <Route path="/SignIn" element={ <SignIn/>}/>
+        <Route path="/SignUp" element={ <SignUp/>}/>
+>>>>>>> 44ded5cb4c05d0de47004864de4d29129a770d6e
         </Routes>
       </Router>
     </div>
