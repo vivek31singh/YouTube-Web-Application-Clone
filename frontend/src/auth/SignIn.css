@@ -1,0 +1,122 @@
+.signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.signin__sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 440px;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.signin__welcome__user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dfdfdf;
+  margin: 5px;
+  padding: 6px;
+  border-radius: 25px;
+}
+
+.signin__welcome__user__icon {
+  font-size: 22px;
+  margin-right: 5px;
+}
+
+.signin__welcome__user p {
+  font-size: 13px;
+  max-width: 300px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.email-phone-input,
+.password-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.email-phone-input img,
+.password-input img {
+  width: 75px;
+  padding-top: 70px;
+  padding-bottom: 10px;
+}
+
+.signin__texts {
+  width: 82%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.signin__texts p {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.signin__text__two {
+  color: var(--button-color);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.signin__text__two:hover {
+  color: var(--button-hover-color);
+}
+
+.signin__forgotpass {
+  width: 82%;
+  padding-top: 30px;
+}
+
+.signin__forgotpass p {
+  color: var(--text-blue-color);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.signin__forgotpass p:hover {
+  color: var(--button-hover-color);
+}
+
+@media screen and (max-width: 468px) {
+  .signin__sub {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 418px) {
+  .signin__sub {
+    width: 360px;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .signin__sub {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 318px) {
+  .signin__sub {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
+}

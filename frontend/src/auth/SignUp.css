@@ -1,0 +1,254 @@
+.signup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid #000;
+}
+
+.signup__sub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 440px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.signup-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.signup-step img {
+  width: 75px;
+  padding-top: 70px;
+  padding-bottom: 10px;
+}
+
+.signup__heading,
+.signup__fields {
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.signup__heading h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.signup__heading h5 {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.signup__fields input {
+  width: 90%;
+  padding: 15px;
+  margin: 10px;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+}
+
+.dob-input {
+  width: 104%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dob-input-select,
+.gender-input-select {
+  padding: 15px;
+  margin: 10px;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid #dfdfdf;
+  border-radius: 5px;
+}
+
+.dob-input-select select,
+.gender-input-select select {
+  min-width: 100px;
+  width: 100%;
+  font-size: 15px;
+  outline: none;
+  border: none;
+  color: grey;
+}
+
+.gender-input {
+  width: 104%;
+}
+
+.signup__texts {
+  width: 82%;
+}
+
+.signup__texts p {
+  color: var(--text-blue-color);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.signup__texts p:hover {
+  color: var(--button-hover-color);
+}
+
+.signup__texts label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.signup__texts input {
+  margin-right: 8px;
+  height: 18px;
+  width: 18px;
+}
+
+.signup__buttons {
+  width: 82%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+.signup__submit__btns {
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  background-color: var(--button-color);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.signup__submit__btns:hover {
+  background-color: var(--button-hover-color);
+}
+
+.signup__back__btns {
+  border: none;
+  background: transparent;
+  color: grey;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.signup__back__btns:hover {
+  text-decoration: underline;
+}
+
+.signup__footer,
+.signup__footer__sub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.signup__footer {
+  width: 435px;
+  height: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.signup__footer p {
+  font-size: 13px;
+  font-weight: 600;
+  color: grey;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.signup__footer p:hover {
+  color: var(--text-blue-color);
+}
+
+.signup__footer__sub p {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 468px) {
+  .signup__sub {
+    width: 400px;
+  }
+
+  .signup__footer {
+    width: 395px;
+  }
+}
+
+@media screen and (max-width: 418px) {
+  .signup__sub {
+    width: 360px;
+  }
+
+  .signup__footer {
+    width: 355px;
+  }
+}
+
+@media screen and (max-width: 368px) {
+  .signup__sub {
+    width: 320px;
+  }
+
+  .signup__footer {
+    width: 315px;
+  }
+}
+
+@media screen and (max-width: 318px) {
+  .signup__sub {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
+
+  .signup__footer {
+    width: 100%;
+  }
+
+  .signup__footer,
+  .signup__footer__sub {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .dob-input-select select,
+  .gender-input-select select {
+    min-width: 50px;
+  }
+}
