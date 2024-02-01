@@ -8,7 +8,7 @@ phoneNumber: Number,
 password: String,
 firstName: String,
 lastName: String,
-dob:Date,
+dob:String,
 gender: String,
 username: String
 });
