@@ -4,17 +4,34 @@ const typeDefs = gql`
 
 type User{
 id: ID!
-name: String!
+email: String!,
+phoneNumber: Int!,
+password: String!,
+firstName: String!,
+lastName: String!,
+dob:String!,
+gender: String!,
 username: String!
-age: Int!
-nationality: String!
-
 }
 
 type Query {
     users : [User!]!
+}
 
+input createUserInput {
+    email: String!,
+phoneNumber: Int!,
+password: String!,
+firstName: String!,
+lastName: String!,
+dob:String!,
+gender: String!,
+username: String!
+}
+
+type Mutation{
+createUser(input: createUserInput!): User!
 }
 `;
 
-module.exports = { typeDefs}
+module.exports = { typeDefs: typeDefs}
