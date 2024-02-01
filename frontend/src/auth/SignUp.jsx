@@ -1,6 +1,24 @@
 import React, { useState, useEffect } from "react";
 import "./SignUp.css";
 import axios from "axios";
+import {useMutation, gql} from "@apollo/client";
+
+const CREATE_NEW_USER = gql`
+
+mutation CREATE_NEW_USER($input: createUserInput!){
+  createUser(input: $input) {
+     email
+  phoneNumber
+  password
+  firstName
+  lastName
+  dob
+  gender
+  username
+  }
+}
+`;
+
 
 function SignUp() {
   const [formData, setFormData] = useState({
@@ -13,7 +31,8 @@ function SignUp() {
     password: "",
     confirmPassword: "",
   });
-
+  
+  const [createUser, { data }] = useMutation(CREATE_NEW_USER);
   const [currentStep, setCurrentStep] = useState(1);
 
   const handleNext = () => {
@@ -22,16 +41,20 @@ function SignUp() {
   };
 
   const handleSubmit = async () => {
-    // Add logic to handle submission of user details
+    try {
+      // Use the createUser mutation function to send the request
+      const result = await createUser({
+        variables: { input: formData },
+      });
 
-await axios.post("http://localhost:3001/users/createNewUser",formData).then(response => {
-  // Handle success
-  console.log('Response:', response.data);
-})
-.catch(error => {
-  // Handle error
-  console.error('Error:', error);
-});
+      // Handle the result, which includes the data returned from the server
+      console.log(result.data);
+
+      // You can update your state or perform other actions based on the result
+    } catch (error) {
+      // Handle any errors that occur during the mutation
+      console.error(error);
+    }
   };
 
   const handleBack = () => {
