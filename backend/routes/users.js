@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var {userModel} = require("../Db_Connect")
 var {typeDefs} = require("../schema/type-defs")
+var {resolvers} = require("../schema/resolvers")
 const {ApolloServer} = require("apollo-server")
 
 
