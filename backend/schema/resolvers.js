@@ -1,4 +1,3 @@
-var {} = require("apollo-server");
 var { userModel } = require("../Db_Connect");
 const resolvers = {
   Query: {
@@ -15,8 +14,9 @@ const resolvers = {
 
     createUser: async (parent, args) => {
       const user = args.input;
-
+console.log(user);
       const createdUser = await userModel.create(user);
+      console.log(createdUser);
       return createdUser;
     },
   },

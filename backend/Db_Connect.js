@@ -10,7 +10,6 @@ firstName: String,
 lastName: String,
 dob:String,
 gender: String,
-username: String
 });
 
 

@@ -11,7 +11,6 @@ firstName: String!,
 lastName: String!,
 dob:String!,
 gender: String!,
-username: String!
 }
 
 type Query {
@@ -26,7 +25,6 @@ firstName: String!,
 lastName: String!,
 dob:String!,
 gender: String!,
-username: String!
 }
 
 type Mutation{
