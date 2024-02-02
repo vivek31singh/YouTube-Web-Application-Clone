@@ -1,7 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./SignUp.css";
-
 import GoogleIcon from "../assets/google_icon.png";
+import { useMutation, gql } from "@apollo/client";
+
+const CREATE_NEW_USER = gql`
+  mutation createUser($input: createUserInput!) {
+    createUser(input: $input) {
+      email
+      phoneNumber
+      password
+      firstName
+      lastName
+      dob
+      gender
+    }
+  }
+`;
 
 function SignUp() {
   const [formData, setFormData] = useState({
@@ -12,11 +26,12 @@ function SignUp() {
     birthYear: "",
     gender: "",
     email: "",
-    phone: "",
+    phoneNumber: "",
     password: "",
     confirmPassword: "",
   });
 
+  const [createUser, { data ,error}] = useMutation(CREATE_NEW_USER);
   const [currentStep, setCurrentStep] = useState(1);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -29,9 +44,34 @@ function SignUp() {
     setCurrentStep((prevStep) => prevStep + 1);
   };
 
+  const {
+    firstName,
+    lastName,
+    birthMonth,
+    birthDay,
+    birthYear,
+    dob,
+    gender,
+    email,
+    phoneNumber,
+    password,
+    confirmPassword,
+  } = formData;
+
   const handleSubmit = () => {
-    // Add logic to handle submission of user details
-    console.log("Form Data:", formData);
+    createUser({
+      variables: {
+        input: {
+          email,
+          phoneNumber: parseInt(phoneNumber),
+          password,
+          firstName,
+          lastName,
+          dob,
+          gender,
+        },
+      },
+    });
   };
 
   const handleBack = () => {
@@ -63,26 +103,35 @@ function SignUp() {
   }, [currentStep]);
 
   const handleChange = (field, value) => {
-    // Update the form data
-    setFormData((prevData) => ({
-      ...prevData,
-      [field]: value,
-    }));
+    if (field === "phoneNumber") {
+      // Validate that the entered value is a number
+      if (!isNaN(value)) {
+        setFormData((prevData) => ({
+          ...prevData,
+          [field]: value,
+        }));
+      }
+    } else if (
+      field === "birthMonth" ||
+      field === "birthDay" ||
+      field === "birthYear"
+    ) {
+      const updatedDob = `${formData.birthMonth}-${formData.birthDay}-${
+        field === "birthYear" ? value : formData.birthYear
+      }`;
+      setFormData((prevData) => ({
+        ...prevData,
+        dob: updatedDob,
+        [field]: value,
+      }));
+    } else {
+      setFormData((prevData) => ({
+        ...prevData,
+        [field]: value,
+      }));
+    }
   };
-
-  const {
-    firstName,
-    lastName,
-    birthMonth,
-    birthDay,
-    birthYear,
-    gender,
-    email,
-    phone,
-    password,
-    confirmPassword,
-  } = formData;
-
+console.log(data ,error);
   return (
     <div className="signup">
       <div className="signup__sub">
@@ -214,9 +263,9 @@ function SignUp() {
               />
               <input
                 type="number"
-                placeholder="Phone number"
-                value={phone}
-                onChange={(e) => handleChange("phone", e.target.value)}
+                placeholder="phone number"
+                value={phoneNumber}
+                onChange={(e) => handleChange("phoneNumber", e.target.value)}
               />
             </div>
             <div className="signup__buttons">
